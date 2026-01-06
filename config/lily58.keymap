@@ -54,7 +54,7 @@
 &trans  &trans                    &trans    &trans                     &trans  &trans                    &trans  &trans                    &trans                     &trans          &trans           &trans
 &trans  &kp LS(LG(LEFT_BRACKET))  &kp UP    &kp LS(LG(RIGHT_BRACKET))  &trans  &trans                    &trans  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &trans          &trans           &trans
 &trans  &kp LEFT                  &kp DOWN  &kp RIGHT                  &trans  &trans                    &trans  &kp LEFT_ARROW            &kp UP_ARROW               &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &trans                    &trans    &trans                     &trans  &trans  &trans    &trans  &trans  &trans                    &trans                     &trans          &trans           &trans
+&trans  &trans                    &trans    &trans                     &trans  &trans  &trans    &trans  &trans  &kp LC(LEFT)              &kp LC(RIGHT)              &trans          &trans           &trans
                                             &trans                     &trans  &trans  &trans    &trans  &trans  &trans                    &trans
             >;
 
