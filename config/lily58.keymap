@@ -51,11 +51,11 @@
 
         raise {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans                    &trans                     &trans          &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &trans          &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp LEFT_ARROW            &kp UP_ARROW               &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans                    &trans                     &trans          &trans           &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans                    &trans
+&trans  &trans                    &trans    &trans                     &trans  &trans                    &trans  &trans                    &trans                     &trans          &trans           &trans
+&trans  &kp LS(LG(LEFT_BRACKET))  &kp UP    &kp LS(LG(RIGHT_BRACKET))  &trans  &trans                    &trans  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &trans          &trans           &trans
+&trans  &kp LEFT                  &kp DOWN  &kp RIGHT                  &trans  &trans                    &trans  &kp LEFT_ARROW            &kp UP_ARROW               &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &trans                    &trans    &trans                     &trans  &trans  &trans    &trans  &trans  &trans                    &trans                     &trans          &trans           &trans
+                                            &trans                     &trans  &trans  &trans    &trans  &trans  &trans                    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
