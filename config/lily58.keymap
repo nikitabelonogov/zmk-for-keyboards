@@ -33,7 +33,7 @@
             bindings = <&kp SPACE>, <&tog 4>;
         };
 
-        // Type a symbol while the Russian input source is active:
+        // Only for symbols the Russian layout cannot produce at all (backslash):
         // switch to ABC, tap the key, switch back to Russian
         ru_sym: ru_symbol {
             compatible = "zmk,behavior-macro-one-param";
@@ -42,10 +42,10 @@
             tap-ms = <30>;
             bindings
                 = <&macro_tap &kp LC(SPACE)>
-                , <&macro_wait_time 100>
+                , <&macro_wait_time 150>
                 , <&macro_param_1to1>
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_wait_time 100>
+                , <&macro_wait_time 150>
                 , <&macro_tap &kp LC(SPACE)>;
         };
     };
@@ -141,8 +141,8 @@
             bindings = <
 &trans  &trans         &trans             &trans              &trans               &trans                              &trans         &trans        &trans            &trans                &trans                 &trans
 &trans  &trans         &trans             &trans              &trans               &trans                              &trans         &trans        &trans            &trans                &trans                 &trans
-&trans  &trans         &ru_sym AT_SIGN    &ru_sym HASH        &ru_sym DOLLAR       &ru_sym PERCENT                     &ru_sym CARET  &ru_sym AMPS  &ru_sym ASTERISK  &trans                &trans                 &ru_sym TILDE
-&trans  &ru_sym GRAVE  &ru_sym BACKSLASH  &ru_sym LEFT_BRACE  &ru_sym RIGHT_BRACE  &trans           &trans    &trans   &ru_sym PIPE   &trans        &trans            &ru_sym LEFT_BRACKET  &ru_sym RIGHT_BRACKET  &trans
+&trans  &trans          &kp LA(N2)         &kp LA(N3)          &kp LA(N4)           &kp LA(N5)                          &kp LA(N6)     &kp LA(N7)    &kp LA(N8)        &trans                &trans                 &kp LA(M)
+&trans  &kp LA(LS(N0))  &ru_sym BACKSLASH  &kp LA(N9)          &kp LA(N0)           &trans           &trans    &trans   &kp LA(LS(N1)) &trans        &trans            &kp LS(GRAVE)         &kp GRAVE              &trans
                                           &trans              &trans               &trans           &trans    &trans   &trans         &trans        &trans
             >;
 
