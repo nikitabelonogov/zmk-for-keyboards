@@ -11,14 +11,26 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    behaviors {
+        // Space, but with Ctrl held it also toggles the RU layer; Ctrl passes
+        // through, so macOS still sees Ctrl+Space and switches the input source
+        space_lang: space_language {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&lang_tog>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+    };
+
     macros {
-        // Toggle macOS input source (Ctrl+Space) and the internal RU layer together
-        lang_sw: lang_switch {
+        // Companion of space_lang: send the Space tap and flip the RU layer
+        lang_tog: lang_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
+            wait-ms = <0>;
             tap-ms = <30>;
-            bindings = <&kp LC(SPACE)>, <&tog 4>;
+            bindings = <&kp SPACE>, <&tog 4>;
         };
 
         // Type a symbol while the Russian input source is active:
@@ -66,7 +78,7 @@
 &kp TAB           &kp Q   &kp W   &kp E     &kp R     &kp T                                  &kp Y   &kp U     &kp I      &kp O    &kp P     &kp LEFT_BRACKET
 &kp LEFT_CONTROL  &kp A   &kp S   &kp D     &kp F     &kp G                                  &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LEFT_SHIFT    &kp Z   &kp X   &kp C     &kp V     &kp B   &kp C_MUTE    &rgb_ug RGB_TOG  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                  &kp LGUI  &kp LALT  &mo 1   &kp SPACE     &kp RET          &mo 2   &kp BSPC  &lang_sw
+                                  &kp LGUI  &kp LALT  &mo 1   &space_lang   &kp RET          &mo 2   &kp BSPC  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
