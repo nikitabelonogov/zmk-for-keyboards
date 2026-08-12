@@ -13,10 +13,12 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  # nice!nano v2 board target after the ZMK Zephyr 4.1 migration
+  # (see https://zmk.dev/blog/2025/12/09/zephyr-4-1#zmk-board-variant)
+  - board: nice_nano//zmk
     shield: lily58_left
     snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: lily58_right
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: settings_reset
